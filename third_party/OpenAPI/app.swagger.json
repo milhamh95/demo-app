@@ -184,7 +184,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/BookingServiceExpireBookingBody"
             }
           }
         ],
@@ -223,7 +223,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "type": "object"
+              "$ref": "#/definitions/BookingServiceReserveBookingBody"
             }
           }
         ],
@@ -316,6 +316,12 @@
     }
   },
   "definitions": {
+    "BookingServiceExpireBookingBody": {
+      "type": "object"
+    },
+    "BookingServiceReserveBookingBody": {
+      "type": "object"
+    },
     "coursev1Status": {
       "type": "string",
       "enum": [

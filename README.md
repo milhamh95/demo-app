@@ -33,7 +33,7 @@ I have prepared some basic setup here including the following:
     ```
 
     Make sure you have `make` installed. If not, run `apt install make` or whatever you need to do to install `make` on your machine.
-    
+
     If you get error when running `make bootstrap` because some dependencies are missing, just install them. For instance, if you got this following errors:
 
     ```
@@ -50,7 +50,7 @@ I have prepared some basic setup here including the following:
     ```bash
     make course/server
     ```
-    
+
     You should see that HTTP server starts at port 8800 and gRPC server starts at port 9900.
 
 1. Seed the database by running the following command from this project directory
@@ -65,11 +65,11 @@ I have prepared some basic setup here including the following:
 
 ## Running load generator
 
-Load generator here is used to test your implementation. 
+Load generator here is used to test your implementation.
 
 While you may see the implementation of the load generator, I suggest you to **not do that**. Instead, you should treat the load generator as a black box so that you can fully understand how the API clients interacting with your API **only by using instrumentation** you set.
 
-1. Make sure you have python 3.x installed. 
+1. Make sure you have python 3.x installed.
 
 1. Install virtualenv
 
@@ -95,7 +95,7 @@ While you may see the implementation of the load generator, I suggest you to **n
 
     ```bash
     locust -f locustfiles --class-picker --modern-ui -H http://localhost:8800
-    ```    
+    ```
 
 1. Open your browser and go to `http://localhost:8089`. You should see the locust dashboard. There are two users scenarios:
 
@@ -104,3 +104,11 @@ While you may see the implementation of the load generator, I suggest you to **n
     * `CompetingUser` is the scenario that you can use later when working on the tracing final challenge. The scenario is designed to simulate a competition between users when making the reservation. You need to spawn a more users to test this scenario to see how it might impact the performance of the system.
 
 1. To start the load generator, go to `http://localhost:8089`, fill the parameter as you need, and click `Start Swarming`.
+
+---
+
+Logki Query
+
+```
+{app = "course-service"} | json | level=`error`
+```
